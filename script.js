@@ -76,7 +76,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRe = /^\+?\d{10,15}$/;
     const textRe = /^[A-Za-zА-Яа-яЁё0-9\s.,!?\-]+$/u;
+    const fieldChecks = [
+        { el: form.querySelector('input[name="name"]'),    check: v => textRe.test(v) },
+        { el: form.querySelector('input[name="email"]'),   check: v => emailRe.test(v) },
+        { el: form.querySelector('input[name="phone"]'),   check: v => phoneRe.test(v) },
+        { el: form.querySelector('textarea[name="message"]'), check: v => textRe.test(v) },
+    ];
 
+    fieldChecks.forEach(({el, check}) => {
+        const indicator = el.closest('.form-group').querySelector('.indicator');
+        el.addEventListener('input', () => {
+            if (!el.value) {
+                indicator.textContent = '';
+                indicator.classList.remove('valid', 'invalid');
+            } else if (check(el.value)) {
+                indicator.textContent = '😊';
+                indicator.classList.add('valid');
+                indicator.classList.remove('invalid');
+            } else {
+                indicator.textContent = '😡';
+                indicator.classList.add('invalid');
+                indicator.classList.remove('valid');
+            }
+        });
+    });
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 

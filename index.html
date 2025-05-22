@@ -40,10 +40,25 @@
     <button id="close-form" class="close">&times;</button>
     <form id="contact-form" novalidate>
         <h3>Связаться со мной</h3>
-        <label>Имя       <input type="text"  name="name"    required></label>
-        <label>E-mail    <input type="email" name="email"   required></label>
-        <label>Телефон   <input type="tel"   name="phone"   placeholder="+79991234567" required></label>
-        <label>Сообщение <textarea name="message" rows="4" required></textarea></label>
+
+        <div class="form-group">
+            <label>Имя <input type="text"  name="name" required></label>
+            <span class="indicator"></span>
+        </div>
+
+        <div class="form-group">
+            <label>E-mail <input type="email" name="email" required></label>
+            <span class="indicator"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Телефон <input type="tel" name="phone" placeholder="+79991234567" required></label>
+            <span class="indicator"></span>
+        </div>
+        <div class="form-group">
+            <label>Сообщение <textarea name="message" rows="4" required></textarea></label>
+        </div>
+
         <button id="submit-btn" class="btn" type="submit">Отправить</button>
     </form>
 </div>
