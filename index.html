@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Визитка студента МФТИ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header id="header">
+    <div class="site-title">Меню</div>
+</header>
+
+<section class="hero">
+    <h1 class="intro">Привет! Я студент МФТИ 🥱</h1>
+    <button id="open-form-btn" class="btn contact-btn">Обратная связь</button>
+</section>
+
+<section id="projects">
+    <h2 class="gallery-title">Времена года</h2>
+
+    <div class="thumbnails">
+        <figure><img src="img/spring.jpg" alt="Весна" data-caption="Весна"><figcaption>Весна</figcaption></figure>
+        <figure><img src="img/summer.jpg" alt="Лето" data-caption="Лето"><figcaption>Лето</figcaption></figure>
+        <figure><img src="img/autumn.jpg" alt="Осень" data-caption="Осень"><figcaption>Осень</figcaption></figure>
+        <figure><img src="img/winter.jpg" alt="Зима" data-caption="Зима"><figcaption>Зима</figcaption></figure>
+    </div>
+</section>
+
+<div id="gallery-popup" class="popup">
+    <button id="close-gallery" class="close">&times;</button>
+    <button id="prev-btn" class="nav btn-left">&#10094;</button>
+    <img id="popup-img" src="" alt="">
+    <p id="popup-caption" class="popup-caption"></p>
+    <button id="next-btn" class="nav btn-right">&#10095;</button>
+</div>
+
+<div id="form-popup" class="popup">
+    <button id="close-form" class="close">&times;</button>
+    <form id="contact-form" novalidate>
+        <h3>Связаться со мной</h3>
+        <label>Имя       <input type="text"  name="name"    required></label>
+        <label>E-mail    <input type="email" name="email"   required></label>
+        <label>Телефон   <input type="tel"   name="phone"   placeholder="+79991234567" required></label>
+        <label>Сообщение <textarea name="message" rows="4" required></textarea></label>
+        <button id="submit-btn" class="btn" type="submit">Отправить</button>
+    </form>
+</div>
+
+<div id="timed-popup" class="popup timed">
+    <button id="close-timed" class="close">&times;</button>
+    <p>Привет! Надеюсь, сайт тебе нравится 😊</p>
+</div>
+
+<footer id="footer">
+    <p class="countdown">
+        До осени осталось:
+        <span id="days"></span> д
+        <span id="hours"></span> ч
+        <span id="minutes"></span> м
+        <span id="seconds"></span> с
+    </p>
+
+    <div class="socials">
+        <a href="#" class="social" aria-label="Telegram"><img src="img/tg.png" alt=""></a>
+        <a href="#" class="social" aria-label="VK"><img src="img/vk.png" alt=""></a>
+    </div>
+</footer>
+
+<svg id="decor" width="160" height="160" viewBox="0 0 160 160" style="overflow:visible">
+    <circle id="svg-circle" cx="80" cy="80" r="40" fill="none" stroke="#666" stroke-width="2"/>
+</svg>
+</body>
+</html>

@@ -1,0 +1,276 @@
+:root {
+    --bg-main: #0f0f0f;
+    --bg-alt: #1a1a1a;
+    --fg-main: #e5e5e5;
+    --accent: #888;
+    --accent-soft: #555;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font: 16px/1.5 "Segoe UI", sans-serif;
+    background: var(--bg-main);
+    color: var(--fg-main)
+}
+
+a {
+    color: var(--fg-main);
+    text-decoration: none
+}
+
+.btn {
+    background: var(--accent-soft);
+    color: var(--fg-main);
+    padding: 12px 28px;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+.btn:hover {
+    opacity: .8
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 40px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    background: var(--bg-alt);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#header.sticky {
+    position: fixed;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 700
+}
+
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.intro {
+    font-size: 2.6rem;
+    margin-bottom: 48px
+}
+
+.contact-btn {
+    background: var(--bg-alt);
+    font-size: 1.1rem
+}
+
+#projects {
+    padding: 60px 20px 160px;
+    text-align: center
+}
+
+.gallery-title {
+    font-size: 2.6rem;
+    margin-bottom: 32px
+}
+
+.thumbnails {
+    display: grid;
+    gap: 36px;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns:1fr;
+}
+
+@media (min-width: 600px) {
+    .thumbnails {
+        grid-template-columns:repeat(2, 1fr)
+    }
+}
+
+@media (min-width: 900px) {
+    .thumbnails {
+        grid-template-columns:repeat(2, minmax(400px, 1fr))
+    }
+}
+
+.thumbnails img {
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.05)
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 1.125rem;
+    color: var(--fg-main);
+    text-align: center;
+}
+
+.popup {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .75);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s;
+    z-index: 1500;
+}
+
+.popup-caption {
+    margin-top: 16px;
+    color: var(--fg-main);
+    text-align: center;
+}
+
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.fade-out {
+    opacity: 0;
+    visibility: visible;
+}
+
+.popup > * {
+    max-width: 90vw;
+    max-height: 90vh
+}
+
+.close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--fg-main);
+    cursor: pointer;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: var(--fg-main);
+    cursor: pointer;
+    user-select: none
+}
+
+.btn-left {
+    left: 10px
+}
+
+.btn-right {
+    right: 10px
+}
+
+#gallery-popup img {
+    width: 100%;
+    border-radius: 8px
+}
+
+#popup-caption {
+    margin-top: 16px;
+    color: var(--fg-main);
+    text-align: center
+}
+
+#contact-form {
+    display: grid;
+    gap: 16px;
+    padding: 32px;
+    background: var(--bg-alt);
+    border-radius: 8px;
+    min-width: 320px
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--accent-soft);
+    background: var(--bg-main);
+    color: var(--fg-main);
+    border-radius: 4px
+}
+
+#footer {
+    padding: 80px 20px 120px;
+    text-align: center;
+    background: var(--bg-alt)
+}
+
+.countdown {
+    font-size: 1.8rem;
+    font-weight: 400
+}
+
+.countdown span {
+    min-width: 2ch;
+    display: inline-block;
+    text-align: center
+}
+
+.socials {
+    margin-top: 32px;
+    display: flex;
+    gap: 32px;
+    justify-content: center
+}
+
+.social img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: opacity .2s
+}
+
+.social:hover img {
+    opacity: .85;
+    filter: none
+}
+
+#decor {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    pointer-events: none;
+    opacity: .35;
+    transition: opacity .3s
+}
+
+#decor:hover {
+    opacity: .6
+}
